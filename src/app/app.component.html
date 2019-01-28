@@ -1,10 +1,36 @@
-<app-header></app-header>
+<app-header (featureSelector)="onNavigate($event)"></app-header>
 <div class="container">
 <div class="row"> 
 <div class="col-md-9">
 <h2>Hi I am Test App</h2>
-<app-recipes-list></app-recipes-list>   
-<app-recipe-item> </app-recipe-item>
+<app-recipes *ngIf="loadedFeature==='recipe'"></app-recipes>
+<!-- <app-recipes-list></app-recipes-list>    -->
+
+ <!-- <app-recipes></app-recipes> -->
+<app-shopping-list *ngIf="loadedFeature!=='recipe'"></app-shopping-list>
+<!-- <app-cockpit
+(serverCreated)="onServerAdded($event)"
+(bpCreated)="onBlueprintAdded($event)"
+>
+
+
+</app-cockpit>
+<hr>
+<div class="row">
+    <div class="col-xs-12">
+        <button class="btn btn-primary" (click)="onChangeFirst()">Change Event</button>
+        <app-server-element 
+        *ngFor="let serverElement of serverElements"
+        [srvElement]="serverElement"
+        [name]="serverElement.name"
+        >
+
+        </app-server-element>
+    </div>
+</div> -->
 </div>
+<p appBasicHighlight> style me basic directive</p>
+<p appBetterHighlighter> style me appBetterHighlighter</p>
+
 </div>
 </div>
